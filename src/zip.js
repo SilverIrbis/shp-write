@@ -18,7 +18,7 @@ module.exports = function(gj, options) {
                 // geometries
                 l.geometries,
                 function(err, files) {
-                    var fileName = options && options.types[l.type.toLowerCase()] ? options.types[l.type.toLowerCase()] : l.type;
+                    var fileName = options && options.name ? options.name : l.type
                     zip.file(fileName + '.shp', files.shp.buffer, { binary: true });
                     zip.file(fileName + '.shx', files.shx.buffer, { binary: true });
                     zip.file(fileName + '.dbf', files.dbf.buffer, { binary: true });
