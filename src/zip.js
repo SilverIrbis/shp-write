@@ -19,6 +19,7 @@ module.exports = function(gj, options) {
                 l.geometries,
                 function(err, files) {
                     var fileName = options && options.name ? options.name : l.type
+
                     zip.file(fileName + '.shp', files.shp.buffer, { binary: true });
                     zip.file(fileName + '.shx', files.shx.buffer, { binary: true });
                     zip.file(fileName + '.dbf', files.dbf.buffer, { binary: true });
